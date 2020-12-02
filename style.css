@@ -16,9 +16,8 @@ body {
   background: white;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
 }
 
 .header-nav ul {
@@ -26,6 +25,10 @@ body {
   margin: 10px;
   padding: 20px;
   margin-top: 35px;
+}
+
+nav {
+  margin-bottom: 50px;
 }
 
 @media (max-width: 976px) {
@@ -51,7 +54,7 @@ button:focus {
 }
 
 .brand-logo-container {
-  width: 50%;
+  width: 80%;
 }
 @media (max-width: 976px) {
   .brand-logo-container {
@@ -65,16 +68,44 @@ button:focus {
   align-self: center;
 }
 
+ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+ul div {
+  display: flex;
+}
+
 ul a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 10px;
+  background-color: rgb(74, 130, 250);
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 }
 
-ul a i:hover,
-span:hover {
-  color: rgb(45, 111, 255) !important;
+ul i {
+  display: flex;
+  flex-direction: column;
+}
+
+ul a span,
+i {
+  color: white !important;
+}
+
+.navlinks:hover {
+  background-color: rgb(34, 103, 252);
+  transform: scale(1.1);
+  transition: all 0.4s ease-out;
 }
 
 @media (max-width: 976px) {
@@ -83,13 +114,15 @@ span:hover {
     justify-content: center !important;
     align-items: center !important;
   }
-  .header-nav ul {
-    justify-content: center;
-    flex-direction: row;
-  }
+
   ul {
+    justify-content: center !important;
+    align-items: center !important;
     margin: 0 !important;
+    padding: 0;
+    margin-bottom: 50px !important;
   }
+
   ul a i {
     font-size: 1.8rem !important;
     margin: 10px;
@@ -97,6 +130,11 @@ span:hover {
   ul a span {
     margin: 0 !important;
     font-size: 0.5rem !important;
+  }
+
+  ul a {
+    width: 80px;
+    height: 80px;
   }
 }
 
@@ -125,7 +163,7 @@ main {
   background-color: rgba(75, 72, 72, 0.082);
   border-radius: 20px;
   display: flex;
-  width: 90%;
+  width: 100%;
   margin-bottom: 50px;
 }
 
@@ -175,10 +213,16 @@ main {
     padding: 0;
   }
   .about {
+    display: flex;
+    flex-direction: column;
     padding: 25px;
   }
   .about p {
     font-size: 0.8rem;
+  }
+  .btn-contact {
+    justify-self: center;
+    align-self: center;
   }
 }
 
@@ -202,6 +246,8 @@ main {
   font-weight: bold;
   font-size: 1rem;
   line-height: 1.5;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 .testimonial-img {
   width: 10%;
@@ -221,8 +267,8 @@ main {
   }
 }
 
-.carousel-control-next,
-.carousel-control-prev {
+.fa-chevron-left,
+.fa-chevron-right {
   color: black !important;
 }
 
@@ -243,6 +289,8 @@ textarea {
   outline: none;
   width: 100%;
   margin-top: 15px;
+  border: transparent !important;
+  border-bottom: 2px solid rgba(221, 220, 220, 0.295) !important;
 }
 
 textarea {
@@ -264,40 +312,11 @@ textarea {
   }
 }
 
-.typewriter h1 {
-  font-family: "Open Sans", sans-serif;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.1em solid black; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+.name-testimonial img,
+em {
+  margin: 0;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
-}
-
-@media (max-width: 900px) {
-  .typewriter h1 {
-    margin-top: 20px;
-    font-size: 1.5rem;
-  }
+.btn-contact {
+  padding: 10px;
 }
